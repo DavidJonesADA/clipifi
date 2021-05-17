@@ -36,7 +36,7 @@ def recieve_message(client_socket):
 
 
 while True:
-    read_sockets, exception_sockets = select.select(sockets_list, [], sockets_list)
+    read_sockets, _, exception_sockets = select.select(sockets_list, [], sockets_list)
 
     for notified_socket in read_sockets:
         if notified_socket == server_socket:
